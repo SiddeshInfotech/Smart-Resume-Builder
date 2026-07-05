@@ -6,7 +6,8 @@ import LandingPage from "./components/LandingPage";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
-import Dashboard from "./components/Dashboard";   // ✅ new import
+import Dashboard from "./components/Dashboard";   
+<h1>"Hello Smart Resume Builder"</h1>
 
 function App() {
   return (
