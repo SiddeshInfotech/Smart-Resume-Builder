@@ -1,23 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav style={{ background: "#333", padding: "10px" }}>
-      <Link to="/" style={{ color: "white", margin: "0 15px", textDecoration: "none" }}>
-        Home
-      </Link>
-      <Link to="/login" style={{ color: "white", margin: "0 15px", textDecoration: "none" }}>
-        Login
-      </Link>
-      <Link to="/register" style={{ color: "white", margin: "0 15px", textDecoration: "none" }}>
-        Register
-      </Link>
-      <Link to="/forgot-password" style={{ color: "white", margin: "0 15px", textDecoration: "none" }}>
-        Forgot Password
-      </Link>
+    <nav className="navbar">
+      <div className="nav-logo">ResumePro</div>
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/register">Register</Link></li>
+        <li><Link to="/forgot-password">Forgot Password</Link></li>
+      </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;
