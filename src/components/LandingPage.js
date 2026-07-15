@@ -4,15 +4,8 @@ import "../App.css";
 const Landingpage = () => {
   return (
     <div className="landing">
-      <header className="navbar">
-        <div className="logo">ResumePro</div>
-        <nav className="nav-links">
-          <a href="/">Templates</a>
-          <a href="/help">Help</a>
-          <a href="/login">Log In</a>
-          <button className="btn-primary">Create New</button>
-        </nav>
-      </header>
+     
+
 
       <section className="hero">
         <div className="hero-text">
@@ -21,7 +14,7 @@ const Landingpage = () => {
             Build a Career‑Ready <span className="highlight">Resume</span> in Minutes.
           </h1>
           <p>
-            The AI‑powered resume builder designed specifically for students and fresh graduates.
+            The ResumePro is a smart resume builder tool designed specifically for students and fresh graduates.
             Turn your education and internships into a professional profile that gets you hired.
           </p>
           <div className="cta">
@@ -33,15 +26,7 @@ const Landingpage = () => {
           </div>
         </div>
 
-        <div className="hero-image">
-          {/* ✅ Use public folder path */}
-          <img src="/landing-image.png" alt="Resume illustration" />
-
-          <div className="tag top-left">
-            ✅ AI Optimizer<br /><small>Resume health: 98%</small>
-          </div>
-          <div className="tag bottom-right">💼 New Job Match!</div>
-        </div>
+        
       </section>
 
       <section className="features">

@@ -29,62 +29,42 @@ body {
 
 /* Navbar */
 .navbar {
-  background: #1E3A8A; /* deep blue */
+  background: #1E3A8A;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem; /* shorter height */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo left, links right */
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.logo {
+.nav-logo {
   font-size: 1.8rem;
-  font-weight: 800;
-  color: #fff; /* white logo text */
+  font-weight: 900; /* bolder heading */
+  color: #fff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
-.nav-links a {
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li a {
   color: #fff;
-  margin: 0 1rem;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #2512ff; /* light blue accent on hover */
+.nav-links li a:hover {
+  color: #93C5FD;
 }
-
-.btn-primary {
-  background-color: #2563EB; /* strong blue */
-  color: #fff;               /* white text */
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.btn-primary:hover {
-  background-color: #1E40AF; /* darker blue on hover */
-  transform: translateY(-2px); /* subtle lift */
-}
-
-.btn-primary:active {
-  transform: translateY(0); /* reset when clicked */
-}
-
-
-
-
-
-.btn-primary:hover {
-  background: #0033aa;
-  transform: translateY(-2px);
-}
-
- 
 
 /* Hero Section */
 .hero {
@@ -119,17 +99,46 @@ body {
 .bottom-right { bottom: 10px; right: 10px; }
 
 /* Features */
+/* Features Container */
 .features {
   display: flex;
-  justify-content: space-around;
-  padding: 2rem 3rem;
-  background: #fff;
-}
-.feature {
-  width: 30%;
-  text-align: center;
+  justify-content: space-between;
+  gap: 2rem; /* Creates uniform spacing instead of space-around */
+  padding: 4rem 3rem; /* Extra vertical breathing room */
+  background: #f8f9fc; /* Match body background so cards pop */
 }
 
+/* Upgraded Feature Cards */
+.features .feature {
+  width: auto; /* Let flex gap handle the sizing */
+  flex: 1;
+  text-align: left; /* Modern landing pages prefer left-aligned card text */
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px; /* Softer, modern roundness */
+  border: 1px solid rgba(0, 0, 0, 0.04); /* Subtle border for crispness */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* Extremely soft depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smooth hover effect to add interactivity */
+.features .feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 68, 204, 0.06); /* Soft glow using your primary color */
+}
+
+/* Give the feature titles some weight */
+.features .feature h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.features .feature p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 /* Footer */
 footer {
   text-align: center;
@@ -169,7 +178,7 @@ footer {
 }
 .password-header {
   display: flex;
-  justify-content: space-between; /* label left, link right */
+  justify-content: space-between;
   align-items: center;
   margin-top: 1.2rem;
 }
@@ -184,7 +193,7 @@ footer {
 .remember {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* space between checkbox and text */
+  gap: 0.5rem;
   margin-top: 1rem;
   font-size: 0.9rem;
 }
@@ -332,12 +341,5 @@ footer {
   background: #0044cc;
   color: #fff;
   padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.login-link-btn:hover {
-  background: #0033aa;
-  transform: translate
+  border-radius:8px;
 }
