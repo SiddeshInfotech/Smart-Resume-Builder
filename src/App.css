@@ -22,10 +22,12 @@ body {
   margin-top: 1.5rem;
   transition: background 0.3s ease, transform 0.2s ease;
 }
+
 .btn-primary:hover {
   background: #0b5f5a;
   transform: translateY(-2px);
 }
+
 .btn-primary:focus-visible {
   outline: 2px solid #e8a33d;
   outline-offset: 2px;

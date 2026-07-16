@@ -6,19 +6,52 @@ import LandingPage from "./components/LandingPage";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
-import Dashboard from "./components/Dashboard";   
-<h1>"Hello Smart Resume Builder"</h1>
+import DashboardLayout from "./components/DashboardLayout"; // 🚀 Import the main layout framework instead!
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/dashboard" element={<Dashboard />} />   {/* ✅ new route */}
+        {/* Public Pages (They get the standard Top Navbar automatically or handle it inside their views) */}
+        <Route 
+          path="/" 
+          element={
+            <>
+              <Navbar />
+              <LandingPage />
+            </>
+          } 
+        />
+        <Route 
+          path="/login" 
+          element={
+            <>
+              <Navbar />
+              <Login />
+            </>
+          } 
+        />
+        <Route 
+          path="/register" 
+          element={
+            <>
+              <Navbar />
+              <Register />
+            </>
+          } 
+        />
+        <Route 
+          path="/forgot-password" 
+          element={
+            <>
+              <Navbar />
+              <ForgotPassword />
+            </>
+          } 
+        />
+
+        {/* 🔐 App Workspace Pages (DashboardLayout handles its own nested Navbar and Sidebar!) */}
+        <Route path="/dashboard" element={<DashboardLayout />} />
       </Routes>
     </Router>
   );

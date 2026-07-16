@@ -25,30 +25,36 @@ const Navbar = () => {
       </Link>
 
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li>
-          <Link to="/" className={isActive("/") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/login" className={isActive("/login") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Login
-          </Link>
-        </li>
-        <li>
-          <Link to="/register" className={isActive("/register") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Register
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/forgot-password"
-            className={isActive("/forgot-password") ? "active" : ""}
-            onClick={() => setMenuOpen(false)}
-          >
-            Forgot Password
-          </Link>
-        </li>
+  <li>
+    <Link to="/" className={isActive("/") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+      Home
+    </Link>
+  </li>
+  {/* 🚀 New Dashboard Link added here! */}
+  <li>
+    <Link to="/dashboard" className={isActive("/dashboard") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+      Dashboard
+    </Link>
+  </li>
+  <li>
+    <Link to="/login" className={isActive("/login") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+      Login
+    </Link>
+  </li>
+  <li>
+    <Link to="/register" className={isActive("/register") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+      Register
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/forgot-password"
+      className={isActive("/forgot-password") ? "active" : ""}
+      onClick={() => setMenuOpen(false)}
+    >
+      Forgot Password
+    </Link>
+  </li>
       </ul>
 
       <button

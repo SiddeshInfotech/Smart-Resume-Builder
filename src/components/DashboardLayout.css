@@ -1,0 +1,19 @@
+.hybrid-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Prevents the whole browser screen viewport from scrolling */
+}
+
+.workspace-wrapper {
+  display: flex;
+  flex-grow: 1;
+  height: calc(100vh - 65px); /* Automatically fits remaining space below your 65px navbar */
+}
+
+.content-display-window {
+  flex-grow: 1;
+  background-color: #f4f6f8; /* Provides your premium soft gray background tint */
+  overflow-y: auto; /* Restricts vertical scrolling strictly inside your current page window view */
+  padding: 2.5rem;
+}

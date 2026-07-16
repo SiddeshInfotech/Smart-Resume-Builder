@@ -1,0 +1,321 @@
+/* Dashboard Base Architecture */
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.dash-header h1 {
+  font-size: 1.8rem;
+  color: #14213d;
+  font-weight: 700;
+}
+
+.dash-header p {
+  color: #5b6472;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+/* 10 Templates Layout Grid Display */
+.templates-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.template-select-card {
+  background: #ffffff;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.template-select-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(20, 33, 61, 0.08);
+  border-color: #0f7d76;
+}
+
+.template-mock-thumb {
+  height: 150px;
+  background-color: #e9edf2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #14213d;
+  color: #ffffff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.doc-glyph {
+  font-size: 3rem;
+}
+
+.template-card-meta {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.template-card-meta h4 {
+  margin: 0;
+  color: #14213d;
+  font-size: 1rem;
+}
+
+.template-card-meta p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #7a869a;
+  line-height: 1.4;
+}
+
+.action-badge-hint {
+  font-size: 0.8rem;
+  color: #0f7d76;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* ======================================================= */
+/* 🛠️ EDITOR INTERFACE WORKSPACE SYSTEM STYLES              */
+/* ======================================================= */
+.editor-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(20, 33, 61, 0.08);
+  padding-bottom: 1rem;
+}
+
+.btn-back {
+  background: transparent;
+  border: none;
+  color: #7a869a;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.text-teal {
+  color: #0f7d76;
+}
+
+.btn-save {
+  background: #0f7d76;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.editor-body-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Form Tabs Column Menu */
+.editor-tabs-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 33, 61, 0.06);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.editor-tabs-sidebar button {
+  background: transparent;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  color: #5b6472;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.editor-tabs-sidebar button:hover,
+.editor-tabs-sidebar button.active {
+  background-color: #f4f6f8;
+  color: #14213d;
+  font-weight: 600;
+}
+
+.editor-tabs-sidebar button.active {
+  background-color: rgba(15, 125, 118, 0.08);
+  color: #0f7d76;
+}
+
+.custom-tab-btn {
+  border-left: 2px dashed #0f7d76 !important;
+}
+
+.btn-add-custom {
+  background-color: #14213d !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  margin-top: 0.5rem;
+}
+
+/* Form Input Element Boxes */
+.editor-form-window {
+  background: #ffffff;
+  border: 1px solid rgba(20, 33, 61, 0.06);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.form-group-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-group-box h3 {
+  font-size: 1.25rem;
+  color: #14213d;
+  margin-bottom: 0.5rem;
+}
+
+.form-group-box label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5b6472;
+  margin-top: 0.4rem;
+}
+
+.form-group-box input,
+.form-group-box textarea {
+  padding: 0.75rem;
+  border: 1px solid rgba(20, 33, 61, 0.15);
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background-color: #f8fafc;
+  transition: border-color 0.2s;
+}
+
+.form-group-box input:focus,
+.form-group-box textarea:focus {
+  border-color: #0f7d76;
+  background-color: #ffffff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Split Layout for Editor View */
+.split-workspace-layout {
+  display: grid;
+  grid-template-columns: 220px 400px 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Paper Canvas Rendering Box */
+.live-preview-window {
+  position: sticky;
+  top: 10px;
+  background-color: #d1d5db;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  max-height: 78vh;
+  overflow-y: auto;
+}
+
+.resume-paper-canvas {
+  background: #ffffff;
+  width: 100%;
+  max-width: 595px; /* Scaled down A4 proportions */
+  min-height: 842px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #2d3748;
+  box-sizing: border-box;
+}
+
+/* Template Specific Visual Variances using Teal/Blue */
+.template-t1 h2 { color: #0f7d76; }
+.template-t2 h2 { color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 0.3rem; }
+.template-t3 h2 { color: #0d9488; font-family: 'Courier New', Courier, monospace; }
+
+.resume-preview-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.resume-preview-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.75rem;
+  color: #718096;
+  margin: 0 0 1.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.resume-preview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.preview-segment h4 {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #4a5568;
+  letter-spacing: 0.05em;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 0.15rem;
+}
+
+.preview-segment p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #2d3748;
+  line-height: 1.5;
+}
