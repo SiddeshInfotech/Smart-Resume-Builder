@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
 /* Dashboard Base Architecture */
 .dashboard-content {
   display: flex;
@@ -7,15 +9,103 @@
 }
 
 .dash-header h1 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
   font-size: 1.8rem;
   color: #14213d;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .dash-header p {
   color: #5b6472;
   font-size: 0.95rem;
   margin-top: 0.25rem;
+}
+
+/* ======================================================= */
+/* OVERVIEW: stat cards                                     */
+/* ======================================================= */
+.dash-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.dash-stat-card {
+  background: #ffffff;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 16px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dash-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(20, 33, 61, 0.08);
+  border-color: #0f7d76;
+}
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.6rem;
+}
+.stat-icon svg { width: 100%; height: 100%; }
+
+.dash-stat-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #14213d;
+  margin: 0;
+}
+
+.dash-stat-card p {
+  font-size: 0.85rem;
+  color: #7a869a;
+  margin: 0;
+}
+
+/* ======================================================= */
+/* OVERVIEW: quick start card                                */
+/* ======================================================= */
+.quick-start-card {
+  background: #ffffff;
+  border: 1px solid rgba(20, 33, 61, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.quick-start-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+.quick-start-icon svg { width: 100%; height: 100%; }
+
+.quick-start-text h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #14213d;
+  margin: 0 0 0.4rem;
+}
+
+.quick-start-text p {
+  color: #5b6472;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.quick-start-text strong { color: #0f7d76; }
+
+@media (max-width: 600px) {
+  .quick-start-card { flex-direction: column; text-align: center; }
 }
 
 /* 10 Templates Layout Grid Display */
@@ -64,6 +154,15 @@
 .doc-glyph {
   font-size: 3rem;
 }
+
+.template-thumb-svg {
+  width: 84px;
+  height: 105px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(20, 33, 61, 0.12);
+}
+.template-thumb-svg svg { width: 100%; height: 100%; display: block; }
 
 .template-card-meta {
   padding: 1.25rem;
@@ -274,10 +373,108 @@
   box-sizing: border-box;
 }
 
-/* Template Specific Visual Variances using Teal/Blue */
-.template-t1 h2 { color: #0f7d76; }
-.template-t2 h2 { color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 0.3rem; }
-.template-t3 h2 { color: #0d9488; font-family: 'Courier New', Courier, monospace; }
+/* ======================================================= */
+/* TEMPLATE STYLE SYSTEM — 10 distinct looks                */
+/* Each template restyles fonts, header treatment, accent   */
+/* placement, and section-title style. All share the same  */
+/* underlying markup, so differences are typographic/color/ */
+/* layout-accent rather than structural column changes.     */
+/* ======================================================= */
+.resume-paper-canvas {
+  position: relative;
+}
+
+/* ---- T1: Modern Minimalist ---- */
+.template-t1 .resume-preview-header { text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; }
+.template-t1 h2 { color: #14213d; font-weight: 600; }
+.template-t1 .resume-preview-contacts { justify-content: center; }
+.template-t1 .preview-segment h4 { color: #0f7d76; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; border-bottom: none; }
+
+/* ---- T2: Executive Professional ---- */
+.template-t2 { padding-top: 0; }
+.template-t2 .resume-preview-header {
+  background: #14213d; color: #fff; margin: -2.5rem -2.5rem 1.5rem; padding: 2rem 2.5rem 1.5rem; border-bottom: none;
+}
+.template-t2 h2 { color: #fff; }
+.template-t2 .resume-preview-contacts { color: rgba(255,255,255,0.7); border-bottom: none; }
+.template-t2 .preview-segment h4 { color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 0.3rem; text-transform: none; letter-spacing: 0; }
+
+/* ---- T3: Creative Tech ---- */
+.template-t3 { padding-left: 3rem; }
+.template-t3::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: #0f7d76; }
+.template-t3 h2 { font-family: 'IBM Plex Mono', monospace; color: #14213d; }
+.template-t3 .preview-segment h4 { font-family: 'IBM Plex Mono', monospace; color: #0f7d76; font-size: 0.85rem; }
+.template-t3 .preview-segment h4::before { content: "// "; opacity: 0.5; }
+
+/* ---- T4: Elegant Serif ---- */
+.template-t4 { background: #fdfaf3; font-family: Georgia, 'Times New Roman', serif; }
+.template-t4 h2 { font-style: italic; color: #14213d; font-weight: 400; }
+.template-t4 .resume-preview-header { border-bottom: 1px solid #c9932f; }
+.template-t4 .resume-preview-contacts { color: #8a7a55; }
+.template-t4 .preview-segment h4 { font-style: italic; color: #8a7a55; font-weight: 400; border-bottom: none; }
+.template-t4 .preview-segment p { color: #3d3626; }
+
+/* ---- T5: Compact Single-Page ---- */
+.template-t5 { padding: 1.5rem 2rem; font-size: 0.85rem; }
+.template-t5 .resume-preview-header { padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.template-t5 h2 { font-size: 1.25rem; }
+.template-t5 .resume-preview-body { gap: 0.6rem; }
+.template-t5 .preview-segment h4 { font-size: 0.75rem; margin-bottom: 0.15rem; }
+.template-t5 .preview-segment p { font-size: 0.78rem; line-height: 1.35; }
+
+/* ---- T6: Bold Sidebar ---- */
+.template-t6 { padding-left: 3.5rem; }
+.template-t6::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2.5rem; background: #14213d; }
+.template-t6 h2 { text-transform: uppercase; letter-spacing: 0.03em; }
+.template-t6 .preview-segment h4 {
+  display: inline-block; background: #0f7d76; color: #fff; padding: 0.15rem 0.6rem; border-radius: 4px;
+  text-transform: none; border-bottom: none; font-size: 0.78rem;
+}
+
+/* ---- T7: Startup Vibrant ---- */
+.template-t7 { overflow: hidden; }
+.template-t7::before {
+  content: ""; position: absolute; top: -40px; right: -40px; width: 140px; height: 140px;
+  background: #0f7d76; opacity: 0.12; border-radius: 50%;
+}
+.template-t7 h2 { font-family: 'Space Grotesk', sans-serif; color: #14213d; }
+.template-t7 .preview-segment h4 {
+  display: inline-block; background: rgba(15,125,118,0.1); color: #0f7d76; padding: 0.2rem 0.7rem;
+  border-radius: 20px; border-bottom: none; text-transform: none;
+}
+
+/* ---- T8: Academic CV ---- */
+.template-t8 { font-family: 'Times New Roman', Times, serif; font-size: 0.85rem; }
+.template-t8 h2 { font-size: 1.3rem; text-align: center; }
+.template-t8 .resume-preview-contacts { justify-content: center; font-style: italic; }
+.template-t8 .preview-segment h4 {
+  text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; border-bottom: 1px dashed #a0aec0;
+}
+
+/* ---- T9: Functional Entry-Level ---- */
+.template-t9 .preview-segment:nth-of-type(4) h4,
+.template-t9 .preview-segment:nth-of-type(5) h4 {
+  color: #b5761f;
+}
+.template-t9 .preview-segment:nth-of-type(4),
+.template-t9 .preview-segment:nth-of-type(5) {
+  background: #fceccb; padding: 0.8rem 1rem; border-radius: 8px;
+}
+.template-t9 h2 { font-weight: 700; }
+
+/* ---- T10: Premium Clean ---- */
+.template-t10 { padding: 3rem 2.5rem; }
+.template-t10 .resume-preview-header { text-align: center; border-bottom: none; }
+.template-t10 h2 { font-family: Georgia, serif; font-weight: 400; letter-spacing: 0.02em; }
+.template-t10 .resume-preview-header::after {
+  content: ""; display: block; width: 60px; height: 1.5px; background: #e8a33d; margin: 0.7rem auto 0;
+}
+.template-t10 .resume-preview-contacts { justify-content: center; }
+.template-t10 .preview-segment h4 {
+  text-align: center; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.72rem;
+  color: #7a869a; border-bottom: none;
+}
+.template-t10 .preview-segment p { text-align: center; }
 
 .resume-preview-header h2 {
   margin: 0 0 0.5rem 0;
