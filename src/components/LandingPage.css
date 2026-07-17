@@ -2,16 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
 .landing {
-  --ink: #14213d;
-  --paper: #f4f6f8;
-  --paper-alt: #e9edf2;
-  --teal: #0f7d76;
-  --teal-dark: #0b5f5a;
-  --amber: #e8a33d;
-  --slate: #5b6472;
-  --line: rgba(20, 33, 61, 0.08);
+  --ink: var(--text-primary);
+  --paper: var(--bg-page);
+  --paper-alt: var(--bg-surface-alt);
+  --teal: var(--accent-teal);
+  --teal-dark: var(--accent-teal-dark);
+  --amber: var(--accent-amber);
+  --slate: var(--text-secondary);
+  --line: var(--border-color);
   --radius: 16px;
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--paper);
   color: var(--ink);
   overflow-x: hidden;
 }
@@ -146,7 +147,7 @@
 .resume-card {
   position: relative;
   z-index: 1;
-  background: #fff;
+  background: var(--bg-surface);
   border-radius: var(--radius);
   border: 1px solid var(--line);
   box-shadow: 0 12px 24px rgba(20, 33, 61, 0.08), 0 28px 60px rgba(20, 33, 61, 0.14);
@@ -267,7 +268,7 @@
 .features .feature {
   flex: 1;
   text-align: left;
-  background: #ffffff;
+  background: var(--bg-surface);
   padding: 2.5rem 2rem;
   border-radius: var(--radius);
   border: 1px solid var(--line);
@@ -342,7 +343,7 @@
   justify-content: center;
   gap: 4rem;
   padding: 4rem 3rem;
-  background: var(--ink);
+  background: #14213d;
   color: #fff;
   text-align: center;
 }
@@ -432,7 +433,7 @@
   position: relative;
   text-align: center;
   padding: 4.5rem 3rem 5rem;
-  background: linear-gradient(180deg, var(--paper) 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--bg-surface) 100%);
   overflow: hidden;
 }
 .final-cta h2 {
@@ -446,7 +447,7 @@
 /* ====== Footer ====== */
 footer {
   padding: 3rem 3rem 1.5rem;
-  background: var(--ink);
+  background: #14213d;
   color: rgba(255,255,255,0.85);
 }
 .footer-columns {

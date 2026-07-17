@@ -89,6 +89,36 @@
   outline-offset: 3px;
 }
 
+/* ====== Right-side group: theme toggle + mobile menu button ====== */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: rotate(15deg);
+}
+.theme-toggle-btn svg { width: 18px; height: 18px; }
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid #e8a33d;
+  outline-offset: 2px;
+}
+
 /* ====== Mobile toggle ====== */
 .nav-toggle {
   display: none;

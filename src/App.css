@@ -31,10 +31,11 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
-  background: #f4f6f8;
-  color: #14213d;
+  background: var(--bg-page);
+  color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Buttons */

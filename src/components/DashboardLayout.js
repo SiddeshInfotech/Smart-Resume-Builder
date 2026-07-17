@@ -7,10 +7,9 @@ import Settings from './Settings';
 import AboutUs from './AboutUs';
 import Help from './Help';
 import ContactUs from './ContactUs';
-import { ThemeProvider } from './ThemeContext';
 import './DashboardLayout.css';
 
-function DashboardLayoutInner() {
+export default function DashboardLayout() {
   const [activeTab, setActiveTab] = useState('dashboard');
 
   return (
@@ -30,13 +29,5 @@ function DashboardLayoutInner() {
         </main>
       </div>
     </div>
-  );
-}
-
-export default function DashboardLayout() {
-  return (
-    <ThemeProvider>
-      <DashboardLayoutInner />
-    </ThemeProvider>
   );
 }
