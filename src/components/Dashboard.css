@@ -11,12 +11,12 @@
 .dash-header h1 {
   font-family: 'Space Grotesk', 'Inter', sans-serif;
   font-size: 1.8rem;
-  color: #14213d;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
 .dash-header p {
-  color: #5b6472;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   margin-top: 0.25rem;
 }
@@ -31,8 +31,8 @@
 }
 
 .dash-stat-card {
-  background: #ffffff;
-  border: 1px solid rgba(20, 33, 61, 0.08);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 1.6rem;
   display: flex;
@@ -58,13 +58,13 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #14213d;
+  color: var(--text-primary);
   margin: 0;
 }
 
 .dash-stat-card p {
   font-size: 0.85rem;
-  color: #7a869a;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -72,8 +72,8 @@
 /* OVERVIEW: quick start card                                */
 /* ======================================================= */
 .quick-start-card {
-  background: #ffffff;
-  border: 1px solid rgba(20, 33, 61, 0.05);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
   display: flex;
@@ -92,17 +92,17 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
-  color: #14213d;
+  color: var(--text-primary);
   margin: 0 0 0.4rem;
 }
 
 .quick-start-text p {
-  color: #5b6472;
+  color: var(--text-secondary);
   font-size: 0.92rem;
   line-height: 1.6;
   margin: 0;
 }
-.quick-start-text strong { color: #0f7d76; }
+.quick-start-text strong { color: var(--accent-teal); }
 
 @media (max-width: 600px) {
   .quick-start-card { flex-direction: column; text-align: center; }
@@ -116,8 +116,8 @@
 }
 
 .template-select-card {
-  background: #ffffff;
-  border: 1px solid rgba(20, 33, 61, 0.08);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -173,14 +173,14 @@
 
 .template-card-meta h4 {
   margin: 0;
-  color: #14213d;
+  color: var(--text-primary);
   font-size: 1rem;
 }
 
 .template-card-meta p {
   margin: 0;
   font-size: 0.8rem;
-  color: #7a869a;
+  color: var(--text-muted);
   line-height: 1.4;
 }
 
@@ -245,10 +245,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  background: #ffffff;
+  background: var(--bg-surface);
   padding: 0.75rem;
   border-radius: 12px;
-  border: 1px solid rgba(20, 33, 61, 0.06);
+  border: 1px solid var(--border-color);
   max-height: 70vh;
   overflow-y: auto;
 }
@@ -260,7 +260,7 @@
   text-align: left;
   font-size: 0.85rem;
   border-radius: 8px;
-  color: #5b6472;
+  color: var(--text-secondary);
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s;
@@ -268,8 +268,8 @@
 
 .editor-tabs-sidebar button:hover,
 .editor-tabs-sidebar button.active {
-  background-color: #f4f6f8;
-  color: #14213d;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -292,8 +292,8 @@
 
 /* Form Input Element Boxes */
 .editor-form-window {
-  background: #ffffff;
-  border: 1px solid rgba(20, 33, 61, 0.06);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
 }
@@ -306,14 +306,14 @@
 
 .form-group-box h3 {
   font-size: 1.25rem;
-  color: #14213d;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .form-group-box label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #5b6472;
+  color: var(--text-secondary);
   margin-top: 0.4rem;
 }
 

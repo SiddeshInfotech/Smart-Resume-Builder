@@ -1,3 +1,32 @@
+/* ====== Theme variables (used by the dashboard app shell) ====== */
+:root {
+  --bg-page: #f4f6f8;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #e9edf2;
+  --text-primary: #14213d;
+  --text-secondary: #5b6472;
+  --text-muted: #7a869a;
+  --border-color: rgba(20, 33, 61, 0.08);
+  --accent-teal: #0f7d76;
+  --accent-teal-dark: #0b5f5a;
+  --accent-amber: #e8a33d;
+  --danger: #d93025;
+}
+
+[data-theme="dark"] {
+  --bg-page: #0f1729;
+  --bg-surface: #182338;
+  --bg-surface-alt: #22304a;
+  --text-primary: #f4f6f8;
+  --text-secondary: #b8c2d0;
+  --text-muted: #8996a8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-teal: #16a394;
+  --accent-teal-dark: #0f7d76;
+  --accent-amber: #f0b558;
+  --danger: #f0665c;
+}
+
 /* Global */
 body {
   margin: 0;
@@ -22,12 +51,10 @@ body {
   margin-top: 1.5rem;
   transition: background 0.3s ease, transform 0.2s ease;
 }
-
 .btn-primary:hover {
   background: #0b5f5a;
   transform: translateY(-2px);
 }
-
 .btn-primary:focus-visible {
   outline: 2px solid #e8a33d;
   outline-offset: 2px;

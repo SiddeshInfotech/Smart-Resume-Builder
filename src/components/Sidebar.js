@@ -32,6 +32,12 @@ const icons = {
   help: (
     <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.8" /><path d="M9.5 9.2c.3-1.6 1.6-2.5 3-2.4 1.5.1 2.6 1.1 2.6 2.4 0 1.5-1.4 1.9-2.3 2.7-.5.5-.7 1-.7 1.7" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><circle cx="12" cy="17" r="1" /></svg>
   ),
+  about: (
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.8" /><rect x="11" y="10.5" width="2" height="7" rx="1" /><circle cx="12" cy="7.3" r="1.3" /></svg>
+  ),
+  contact: (
+    <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="1.6" /><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
 };
 
 export default function Sidebar({ activeTab, setActiveTab }) {
@@ -85,7 +91,24 @@ export default function Sidebar({ activeTab, setActiveTab }) {
         >
           <span className="btn-icon">{icons.settings}</span> Settings
         </button>
-        <button className="menu-btn"><span className="btn-icon">{icons.help}</span> Help</button>
+        <button
+          className={`menu-btn ${activeTab === 'about' ? 'active' : ''}`}
+          onClick={() => setActiveTab('about')}
+        >
+          <span className="btn-icon">{icons.about}</span> About Us
+        </button>
+        <button
+          className={`menu-btn ${activeTab === 'help' ? 'active' : ''}`}
+          onClick={() => setActiveTab('help')}
+        >
+          <span className="btn-icon">{icons.help}</span> Help
+        </button>
+        <button
+          className={`menu-btn ${activeTab === 'contact' ? 'active' : ''}`}
+          onClick={() => setActiveTab('contact')}
+        >
+          <span className="btn-icon">{icons.contact}</span> Contact Us
+        </button>
       </nav>
 
       {/* User Session Floating Profile Badge at Bottom */}
