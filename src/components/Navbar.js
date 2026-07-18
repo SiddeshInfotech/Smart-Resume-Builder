@@ -44,16 +44,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/register" className={isActive("/register") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Register
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/forgot-password"
-            className={isActive("/forgot-password") ? "active" : ""}
-            onClick={() => setMenuOpen(false)}
-          >
-            Forgot Password
+            Sign-in
           </Link>
         </li>
         <li>

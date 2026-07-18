@@ -48,7 +48,6 @@ export default function Sidebar({ activeTab, setActiveTab }) {
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'templates', label: 'Templates' },
-    { id: 'preview', label: 'Preview' },
   ];
 
   return (
@@ -84,7 +83,12 @@ export default function Sidebar({ activeTab, setActiveTab }) {
 
         <div className="menu-divider"></div>
 
-        <button className="menu-btn"><span className="btn-icon">{icons.profile}</span> Profile</button>
+        <button
+          className={`menu-btn ${activeTab === 'profile' ? 'active' : ''}`}
+          onClick={() => setActiveTab('profile')}
+        >
+          <span className="btn-icon">{icons.profile}</span> Profile
+        </button>
         <button
           className={`menu-btn ${activeTab === 'settings' ? 'active' : ''}`}
           onClick={() => setActiveTab('settings')}
@@ -112,13 +116,17 @@ export default function Sidebar({ activeTab, setActiveTab }) {
       </nav>
 
       {/* User Session Floating Profile Badge at Bottom */}
-      <div className="sidebar-user-card">
+      <button
+        className="sidebar-user-card"
+        onClick={() => setActiveTab('profile')}
+        aria-label="Open Profile"
+      >
         <div className="user-avatar-small">B</div>
         <div className="user-info-text">
           <span className="user-name">Bhavesh A.</span>
           <span className="user-role">Student</span>
         </div>
-      </div>
+      </button>
     </aside>
   );
 }

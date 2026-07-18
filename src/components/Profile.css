@@ -1,0 +1,91 @@
+.profile-page .dash-header h1 { color: var(--text-primary); }
+.profile-page .dash-header p { color: var(--text-secondary); }
+
+.profile-header-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.profile-avatar-large {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f7d76, #e8a33d);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.profile-header-text { flex: 1; min-width: 180px; }
+.profile-header-text h2 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.4rem;
+}
+.profile-edition-badge {
+  display: inline-block;
+  background: rgba(15, 125, 118, 0.1);
+  color: var(--accent-teal);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+.profile-email { font-size: 0.9rem; color: var(--text-secondary); margin: 0.3rem 0 0.1rem; }
+.profile-member-since { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+.profile-edit-btn { flex-shrink: 0; }
+
+.profile-stats-grid { margin-bottom: 1.5rem; }
+
+.profile-links-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem;
+}
+.profile-links-card h3 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.8rem;
+}
+.profile-link-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  padding: 0.9rem 0.2rem;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+}
+.profile-link-row:first-of-type { border-top: none; }
+.profile-link-arrow { color: var(--accent-teal); font-weight: 600; }
+.profile-link-row:hover { color: var(--accent-teal); }
+
+@media (max-width: 500px) {
+  .profile-header-card { flex-direction: column; text-align: center; }
+}
