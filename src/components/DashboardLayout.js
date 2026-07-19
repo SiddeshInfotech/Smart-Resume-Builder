@@ -7,6 +7,7 @@ import Settings from './Settings';
 import AboutUs from './AboutUs';
 import Help from './Help';
 import ContactUs from './ContactUs';
+import Profile from './Profile';
 import './DashboardLayout.css';
 
 export default function DashboardLayout() {
@@ -19,12 +20,13 @@ export default function DashboardLayout() {
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         <main className="content-display-window">
           <div key={activeTab} className="tab-fade">
-            {activeTab === 'dashboard' && <Dashboard />}
+            {activeTab === 'dashboard' && <Dashboard setActiveTab={setActiveTab} />}
             {activeTab === 'templates' && <Templates />}
             {activeTab === 'settings' && <Settings />}
             {activeTab === 'about' && <AboutUs />}
             {activeTab === 'help' && <Help setActiveTab={setActiveTab} />}
             {activeTab === 'contact' && <ContactUs />}
+            {activeTab === 'profile' && <Profile setActiveTab={setActiveTab} />}
           </div>
         </main>
       </div>

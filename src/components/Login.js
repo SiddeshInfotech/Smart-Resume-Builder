@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import "../App.css";
 import Toast from "./Toast";
@@ -7,10 +8,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [toast, setToast] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setToast({ message: "Login successful. Welcome back!", type: "success" });
+    setToast({ message: "Login successful — taking you to your dashboard...", type: "success" });
+    setTimeout(() => navigate("/dashboard"), 1300);
   };
 
   return (

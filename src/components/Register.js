@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import "../App.css";
 import Toast from "./Toast";
@@ -13,6 +14,7 @@ const Register = () => {
 
   const [passwordError, setPasswordError] = useState("");
   const [toast, setToast] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,14 +36,15 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (passwordError) {
-      setToast({ message: "Please fix password errors before submitting.", type: "error" });
+      setToast({ message: "That password isn't valid yet — check the requirements below and try again.", type: "error" });
       return;
     }
     if (formData.password !== formData.confirmPassword) {
-      setToast({ message: "Passwords do not match.", type: "error" });
+      setToast({ message: "Those passwords don't match — please re-enter them.", type: "error" });
       return;
     }
-    setToast({ message: `Account created for ${formData.name}.`, type: "success" });
+    setToast({ message: `Account created, ${formData.name}! Taking you to log in...`, type: "success" });
+    setTimeout(() => navigate("/login"), 1300);
   };
 
   return (
