@@ -54,6 +54,7 @@ function App() {
 
           {/* 🔐 App Workspace Pages (DashboardLayout handles its own nested Navbar and Sidebar!) */}
           <Route path="/dashboard" element={<DashboardLayout />} />
+          <Route path="/template" element={<DashboardLayout />} />
         </Routes>
       </Router>
     </ThemeProvider>

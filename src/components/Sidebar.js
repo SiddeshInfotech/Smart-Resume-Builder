@@ -43,10 +43,6 @@ const icons = {
 export default function Sidebar({ activeTab, setActiveTab }) {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard' },
-    { id: 'personal', label: 'Personal Info' },
-    { id: 'education', label: 'Education' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
     { id: 'templates', label: 'Templates' },
   ];
 

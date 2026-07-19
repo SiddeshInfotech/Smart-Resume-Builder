@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 import "../App.css";
 
@@ -24,7 +25,7 @@ const useReveal = () => {
 
 const Landingpage = () => {
   const [matchScore, setMatchScore] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     let current = 0;
     const target = 94;
@@ -293,7 +294,10 @@ const Landingpage = () => {
       <section className="final-cta" ref={ctaRef}>
         <div className="blob blob-cta"></div>
         <h2>Your next internship starts with a better resume.</h2>
-        <button className="btn-primary">Build My Resume Now</button>
+        <button
+       className="btn-primary"
+        onClick={() => navigate("/template")}>Build My Resume Now</button>
+
       </section>
 
       <footer>
