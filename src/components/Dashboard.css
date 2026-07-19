@@ -394,7 +394,10 @@
 /* ---- T2: Executive Professional ---- */
 .template-t2 { padding-top: 0; }
 .template-t2 .resume-preview-header {
-  background: #14213d; color: #fff; margin: -2.5rem -2.5rem 1.5rem; padding: 2rem 2.5rem 1.5rem; border-bottom: none;
+  background: #14213d; color: #fff;
+  margin: 0 -2.6rem 1.5rem;
+  padding: 1.8rem 2.6rem 1.3rem;
+  border-bottom: none;
 }
 .template-t2 h2 { color: #fff; }
 .template-t2 .resume-preview-contacts { color: rgba(255,255,255,0.7); border-bottom: none; }
@@ -711,8 +714,7 @@
 }
 .page-fit-frame .resume-paper-canvas {
   box-shadow: none;
-  min-height: 0;
-  height: auto;
+  min-height: 842px;
 }
 .page-fit-note {
   text-align: center;

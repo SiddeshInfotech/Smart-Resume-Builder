@@ -5,7 +5,7 @@
   color: #fff;
   padding: 0.85rem 2.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo left, right group right */
   align-items: center;
   position: sticky;
   top: 0;
@@ -41,12 +41,18 @@
 }
 .nav-logo-accent { color: #e8a33d; }
 
-/* ====== Links ====== */
+/* ====== Right-side group: links + theme toggle + mobile menu ====== */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* spacing between links and theme button */
+}
+
 .nav-links {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
@@ -89,13 +95,7 @@
   outline-offset: 3px;
 }
 
-/* ====== Right-side group: theme toggle + mobile menu button ====== */
-.nav-right-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
+/* ====== Theme toggle ====== */
 .theme-toggle-btn {
   width: 34px;
   height: 34px;
@@ -143,6 +143,11 @@
 /* ====== Responsive ====== */
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
+
+  .nav-right-group {
+    flex-direction: row-reverse; /* keep theme button at far right */
+    gap: 1rem;
+  }
 
   .nav-links {
     position: absolute;

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./Login.css";
 import "../App.css";
+import Toast from "./Toast";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [toast, setToast] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Login Successful!\nEmail: ${email}\nPassword: ${password}`);
+    setToast({ message: "Login successful. Welcome back!", type: "success" });
   };
 
   return (
@@ -114,6 +116,10 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      {toast && (
+        <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />
+      )}
     </div>
   );
 };

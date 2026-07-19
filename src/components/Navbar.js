@@ -13,6 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+      {/* Logo on the left */}
       <Link to="/" className="nav-logo">
         <span className="nav-logo-badge">
           <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
@@ -31,30 +32,31 @@ const Navbar = () => {
         </span>
       </Link>
 
-      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li>
-          <Link to="/" className={isActive("/") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/login" className={isActive("/login") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Login
-          </Link>
-        </li>
-        <li>
-          <Link to="/register" className={isActive("/register") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Sign-in
-          </Link>
-        </li>
-        <li>
-          <Link to="/dashboard" className={isActive("/dashboard") ? "active" : ""} onClick={() => setMenuOpen(false)}>
-            Dashboard
-          </Link>
-        </li>
-      </ul>
-
+      {/* Right group: links + theme toggle + mobile menu */}
       <div className="nav-right-group">
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <li>
+            <Link to="/" className={isActive("/") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" className={isActive("/login") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link to="/register" className={isActive("/register") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+              Sign-in
+            </Link>
+          </li>
+          <li>
+            <Link to="/dashboard" className={isActive("/dashboard") ? "active" : ""} onClick={() => setMenuOpen(false)}>
+              Dashboard
+            </Link>
+          </li>
+        </ul>
+
         <button
           className="theme-toggle-btn"
           onClick={toggleTheme}

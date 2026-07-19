@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
 import "../App.css";
+import Toast from "./Toast";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const Register = () => {
   });
 
   const [passwordError, setPasswordError] = useState("");
+  const [toast, setToast] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,14 +34,14 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (passwordError) {
-      alert("Please fix password errors before submitting.");
+      setToast({ message: "Please fix password errors before submitting.", type: "error" });
       return;
     }
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match.");
+      setToast({ message: "Passwords do not match.", type: "error" });
       return;
     }
-    alert(`Account created for ${formData.name} (${formData.email})`);
+    setToast({ message: `Account created for ${formData.name}.`, type: "success" });
   };
 
   return (
@@ -184,6 +186,10 @@ const Register = () => {
           <a href="#">Contact Support</a>
         </footer>
       </div>
+
+      {toast && (
+        <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />
+      )}
     </div>
   );
 };
